@@ -6,7 +6,7 @@ import { CommonModule } from '@angular/common';
 import TokenInterceptor from './intercepters/intercepters';
 import { AppComponent } from './app';
 import { RouterModule } from '@angular/router';
-import { AppRoutingModule } from './app.routes';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [
