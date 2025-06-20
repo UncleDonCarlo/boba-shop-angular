@@ -36,6 +36,11 @@
   </ng-container>
 
   <ng-container cardFooter>
-    <app-base-button [(isLoading)]="isLoading" (click)="onSubmit()" btnTitle="Sign In" />
+    <app-base-button
+      [isDisableButton]="!this.authForm.valid"
+      [(isLoading)]="isLoading"
+      (click)="onSubmit()"
+      btnTitle="Sign In"
+    />
   </ng-container>
 </app-auth-bg-template>

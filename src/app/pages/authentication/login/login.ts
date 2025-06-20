@@ -39,4 +39,8 @@ export class LoginComponent {
     console.error('login error', err)
   }
 
+  get isFormValid(): boolean {
+    return this.authForm.valid;
+  }
+
 }

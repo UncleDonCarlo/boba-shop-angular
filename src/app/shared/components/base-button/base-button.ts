@@ -9,6 +9,7 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 export class BaseButton {
   @Input({ required: true }) btnTitle!: string;
   @Input() isLoading: boolean = false;
+  @Input() isDisableButton: boolean = false;
   @Output() isLoadingChange = new EventEmitter<boolean>();
 
   handleClicked(){
