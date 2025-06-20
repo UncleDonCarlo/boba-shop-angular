@@ -1,0 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Playpen+Sans+Thai:wght@100..800&display=swap');
+
+body {
+  font-family: 'Playpen Sans Thai', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.custom-bg {
+  background-image: url("/assets/background/bg.png");
+  background-size: cover;
+  background-position: center;
+}

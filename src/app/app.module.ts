@@ -8,12 +8,10 @@ import { AppComponent } from './app';
 import { RouterModule } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
 import { SharedModule } from './shared/share';
-import { NormalLayout } from './shared/layouts/normal-layout/normal-layout';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    NormalLayout
+    AppComponent
   ],
   imports: [
     BrowserModule,
