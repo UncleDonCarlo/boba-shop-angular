@@ -1,6 +1,10 @@
-# DonCarloAngular
+# DonCarlo Boaba Shop Angular
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.0.2.
+
+![image](https://github.com/user-attachments/assets/b45879b2-f7b7-43d9-9815-ac88fa72706b)
+
+
 
 ## Development server
 
