@@ -1,0 +1,27 @@
+<label [for]="id">{{label}}</label>
+<input
+  [type]="type"
+  [id]="id"
+  [(ngModel)]="value"
+  (input)="onInput($event)"
+  class="
+    bg-gray-50 border border-gray-300
+    text-gray-900 text-sm
+    rounded-lg
+    focus:ring-blue-500 focus:border-blue-500 block
+    w-full p-2.5
+  "
+  [ngClass]="{`border-red-500` : errorMessage }"
+  [placeholder]="placeholder"
+  [required]="require"
+/>
+
+<ng-container *ngIf="isShowError && errorMessage">
+  <div class="flex items-center gap-1 text-red-500 mt-2">
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="red" class="size-5">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m9-.75a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9 3.75h.008v.008H12v-.008Z" />
+    </svg>
+    <span>{{errorMessage}}</span>
+  </div>
+</ng-container>
+
