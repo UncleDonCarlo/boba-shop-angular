@@ -1,23 +1,28 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CommonModule } from '@angular/common';
 import TokenInterceptor from './intercepters/intercepters';
 import { AppComponent } from './app';
 import { RouterModule } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
+import { SharedModule } from './shared/share';
+import { NormalLayout } from './shared/layouts/normal-layout/normal-layout';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    NormalLayout
   ],
   imports: [
     BrowserModule,
     CommonModule,
     BrowserAnimationsModule,
     RouterModule,
-    AppRoutingModule
+    AppRoutingModule,
+    SharedModule,
+    HttpClientModule
   ],
   providers: [
     {

@@ -1,1 +1,41 @@
-<p>login works!</p>
+<app-auth-bg-template>
+  <ng-container cardHeader>
+    <div class="text-center">
+      <div class="flex justify-center">
+        <img src="assets/icon/icon-boba.png" width="350px" height="350px" alt="Boba Icon">
+      </div>
+    </div>
+  </ng-container>
+
+  <ng-container cardBody>
+    <form [formGroup]="authForm" class="space-y-4" (ngSubmit)="onSubmit()">
+      <div>
+        <app-base-input
+          type="email"
+          id="email"
+          [label]="'Email'"
+          [errorMessage]="errorMessage"
+          [require]="true"
+          [placeholder]="'email'"
+          formControlName="email"
+        />
+      </div>
+      <div>
+        <app-base-input
+          type="password"
+          id="password"
+          [label]="'Password'"
+          [errorMessage]="errorMessage"
+          [require]="true"
+          [placeholder]="'password'"
+          [isShowError]="true"
+          formControlName="password"
+        />
+      </div>
+    </form>
+  </ng-container>
+
+  <ng-container cardFooter>
+    <app-base-button [(isLoading)]="isLoading" (click)="onSubmit()" btnTitle="Sign In" />
+  </ng-container>
+</app-auth-bg-template>

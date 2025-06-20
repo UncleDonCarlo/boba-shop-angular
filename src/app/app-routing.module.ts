@@ -11,6 +11,10 @@ export const routes: Routes = [
     path: 'auth',
     loadChildren: () => import('./pages/authentication/authentication.module').then((m) => m.AuthenticationModule),
   },
+  {
+    path: 'client',
+    loadChildren: () => import('./pages/client/client.module').then((m) => m.ClientModule)
+  }
 ];
 
 @NgModule({
