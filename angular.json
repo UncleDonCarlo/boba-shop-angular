@@ -27,7 +27,9 @@
             ],
             "styles": [
               "src/styles.scss",
-              "src/styles/global.scss"
+              "src/styles/global.scss",
+              "node_modules/animate.css/animate.min.css",
+              "node_modules/swiper/swiper-bundle.min.css"
             ]
           },
           "configurations": {

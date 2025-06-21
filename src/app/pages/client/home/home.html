@@ -1,16 +1,54 @@
 <app-normal-layout>
   <ng-container content>
-    <div class="grid grid-flow-col grid-rows-1 gap-25">
-      <div class="p-4 flex flex-col">
-        <div class="text-4xl">
-          <span>DonCarlo Boba Shop</span>
+    <div class="flex flex-col">
+      <div
+        class="
+          px-24
+          grid
+          grid-cols-1 lg:grid-cols-2
+          grid-rows-1
+          gap-4 lg:gap-25
+          mb-24
+        "
+      >
+        <div class="space-y-5 text-white p-4 flex flex-col justify-center gap-4">
+          <div class="text-5xl text-center lg:text-start">
+            <span>DonCarlo Boba Shop</span>
+          </div>
+          <div>
+            เริ่มต้นวันใหม่ หรือเติมความสดชื่นยามบ่ายกับ Don Carlo Boba Shop! เราคัดสรรวัตถุดิบคุณภาพดีที่สุด ชงสดทุกแก้ว เพื่อให้คุณได้สัมผัสรสชาติชานมไข่มุกที่เข้มข้น หอมหวาน พร้อมไข่มุกหนึบหนับเคี้ยวเพลิน ไม่ว่าคุณจะชอบชาไทย ชาเขียว หรือเมนูพิเศษของเรา ก็พร้อมมอบความสุขในทุกคำ!
+          </div>
         </div>
-        <div>
-          awdawdawdawd
+        <div class="justify-center hidden lg:flex">
+          <img src="assets/home/landing-page.png" alt="">
         </div>
       </div>
-      <div class="flex justify-center">
-        <img src="assets/home/landing-page.png" alt="">
+
+      <div class="custom-secter no-scrollbar mx-auto w-full h-60 bg-fixed bg-center bg-no-repeat shadow-lg"></div>
+
+      <div class="grid my-24 grid-cols-1 grid-rows-1">
+        <div class="flex justify-center">
+          <swiper-container
+            class="
+              mySwiper
+              w-4/6 lg:w-lg
+              h-70
+            "
+            effect="cards"
+            grab-cursor="true"
+            loop="true"
+          >
+            <swiper-slide>Slide 1</swiper-slide>
+            <swiper-slide>Slide 2</swiper-slide>
+            <swiper-slide>Slide 3</swiper-slide>
+            <swiper-slide>Slide 4</swiper-slide>
+            <swiper-slide>Slide 5</swiper-slide>
+            <swiper-slide>Slide 6</swiper-slide>
+            <swiper-slide>Slide 7</swiper-slide>
+            <swiper-slide>Slide 8</swiper-slide>
+            <swiper-slide>Slide 9</swiper-slide>
+          </swiper-container>
+        </div>
       </div>
     </div>
   </ng-container>
