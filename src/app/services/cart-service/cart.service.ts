@@ -9,7 +9,9 @@ import { BehaviorSubject } from 'rxjs';
 export default class CartService {
   products: BehaviorSubject<Product[]> = new BehaviorSubject<Product[]>([]);
 
-  constructor() {}
+  constructor() {
+    this.loadFromStorage();
+  }
 
   addProduct(product: Product) : void {
     const currentProducts = [...this.products.value];
@@ -22,6 +24,7 @@ export default class CartService {
     }
 
     this.products.next(currentProducts);
+    localStorage.setItem("products", JSON.stringify(currentProducts));
   }
 
   getTotalCartAmount(): number{
@@ -36,6 +39,16 @@ export default class CartService {
 
   get getProduct(){
     return this.products || [];
+  }
+
+  set setProduct(products: BehaviorSubject<Product[]>){
+    this.products = products
+  }
+
+  private loadFromStorage() {
+    const products = localStorage.getItem("products");
+    const parsedProducts = products ? JSON.parse(products) : [];
+    this.setProduct = new BehaviorSubject<Product[]>(parsedProducts);
   }
 }
 

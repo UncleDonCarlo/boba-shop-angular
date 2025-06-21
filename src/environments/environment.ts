@@ -1,4 +1,4 @@
 export const environment = {
   production: false,
-  endpoint: ''
+  endpoint: 'https://corleone.uncledoncarlo.com/api/'
 };
