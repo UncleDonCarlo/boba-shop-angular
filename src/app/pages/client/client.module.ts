@@ -5,12 +5,14 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { ClientRoutingModule } from './client-routing.module';
 import { Home } from './home/home';
 import { register } from 'swiper/element/bundle';
+import { BobaList } from './boba-list/boba-list';
 
 register();
 
 @NgModule({
   declarations: [
-    Home
+    Home,
+    BobaList
   ],
   imports: [
     CommonModule,
