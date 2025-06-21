@@ -4,7 +4,9 @@ import { SharedModule } from "../../shared/share";
 import { ReactiveFormsModule } from '@angular/forms';
 import { ClientRoutingModule } from './client-routing.module';
 import { Home } from './home/home';
+import { register } from 'swiper/element/bundle';
 
+register();
 
 @NgModule({
   declarations: [
