@@ -27,6 +27,20 @@ export default class CartService {
     localStorage.setItem("products", JSON.stringify(currentProducts));
   }
 
+  removeProduct(id: number) : void {
+    const currentProducts = [...this.products.value];
+    const existingProductIndex = currentProducts.findIndex(p => p.id === id);
+
+    if(currentProducts[existingProductIndex].quantity <= 1){
+      currentProducts.splice(existingProductIndex, 1);
+    } else {
+      currentProducts[existingProductIndex].quantity -= 1;
+    }
+
+    this.products.next(currentProducts);
+    localStorage.setItem("products", JSON.stringify(currentProducts));
+  }
+
   getTotalCartAmount(): number{
     let count = 0;
 
