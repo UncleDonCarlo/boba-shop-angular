@@ -19,7 +19,6 @@ export class NormalLayout implements OnInit, OnDestroy {
   ngOnInit(): void {
     this.dataSubscription = this.cartService.products.subscribe(cart => {
       this.totalCartAmount = this.cartService.getTotalCartAmount();
-      console.log('Cart changed:', this.totalCartAmount);
     });
   }
 
