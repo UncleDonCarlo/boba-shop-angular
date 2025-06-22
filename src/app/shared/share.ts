@@ -6,13 +6,15 @@ import { AuthBgTemplateComponent } from './layouts/auth-bg-template/auth-bg-temp
 import { BaseInput } from './components/base-input/base-input';
 import { BaseButton } from './components/base-button/base-button';
 import { NormalLayout } from './layouts/normal-layout/normal-layout';
+import { BobaForm } from './components/boba-form/boba-form';
 
 @NgModule({
   declarations: [
     AuthBgTemplateComponent,
     BaseInput,
     BaseButton,
-    NormalLayout
+    NormalLayout,
+    BobaForm
   ],
   imports: [
     CommonModule,
@@ -24,7 +26,8 @@ import { NormalLayout } from './layouts/normal-layout/normal-layout';
     AuthBgTemplateComponent,
     BaseInput,
     BaseButton,
-    NormalLayout
+    NormalLayout,
+    BobaForm
   ],
   schemas: [
     CUSTOM_ELEMENTS_SCHEMA

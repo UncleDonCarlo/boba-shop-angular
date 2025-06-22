@@ -2,15 +2,13 @@ import { Component } from '@angular/core';
 import { bobaForm } from '../../../forms/boba/bobaForm';
 
 @Component({
-  selector: 'app-add-boba',
+  selector: 'app-boba-form',
   standalone: false,
-  templateUrl: './add-boba.html',
-  styleUrl: './add-boba.scss'
+  templateUrl: './boba-form.html',
+  styleUrl: './boba-form.scss'
 })
-export class AddBoba {
+export class BobaForm {
   bobaForm = bobaForm();
 
   constructor() {}
-
-  
 }

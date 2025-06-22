@@ -2,6 +2,7 @@ import { Component, OnDestroy } from '@angular/core';
 import CartService from '../../../services/cart-service/cart.service';
 import { Product } from '../../../interfaces/cart';
 import { timeInterval } from 'rxjs';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-boba-list',
@@ -43,7 +44,16 @@ export class BobaList {
 
   intervalId: any;
 
-  constructor(private cartService: CartService) {}
+  constructor(
+    private cartService: CartService,
+    private router: Router
+  ) {}
+
+  ngOnDestroy(): void {
+    if (this.intervalId) {
+      clearInterval(this.intervalId);
+    }
+  }
 
   addItem(id: number) {
     try {
@@ -67,10 +77,8 @@ export class BobaList {
     }
   }
 
-  ngOnDestroy(): void {
-    if (this.intervalId) {
-      clearInterval(this.intervalId);
-    }
-  }
 
+  goToAddBoba(){
+    this.router.navigate(['/client/add-boba'])
+  }
 }

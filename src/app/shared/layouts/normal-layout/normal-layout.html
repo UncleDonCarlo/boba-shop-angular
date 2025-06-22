@@ -6,10 +6,10 @@
       </div>
 
       <div class="flex justify-between gap-5 items-center">
-        <div [routerLink]="'/client/home'" class="cursor-pointer hidden md:block">
+        <div [routerLink]="'/client/home'" class="cursor-pointer">
           <span>Home</span>
         </div>
-        <div [routerLink]="'/client/boba-list'" class="cursor-pointer hidden md:block">
+        <div [routerLink]="'/client/boba-list'" class="cursor-pointer">
           <span>boba list</span>
         </div>
         <div [routerLink]="'/client/cart'" class="cursor-pointer">
@@ -24,7 +24,8 @@
     </div>
   </div>
 
-  <div class="grow flex items-center justify-center mt-10 lg:mt-0">
+  <!-- flex items-center justify-center -->
+  <div class="grow">
     <ng-content select="[content]"></ng-content>
   </div>
 </div>
