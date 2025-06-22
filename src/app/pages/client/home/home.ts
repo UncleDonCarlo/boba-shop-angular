@@ -26,6 +26,7 @@ export class Home implements AfterViewInit {
           const swiperEl = this.swiperRef.nativeElement;
 
           const swiperParams = {
+            slidesPerView: 3,
             breakpoints: {
               0: {
                 slidesPerView: 1.5,
