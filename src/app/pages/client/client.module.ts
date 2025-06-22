@@ -7,6 +7,7 @@ import { Home } from './home/home';
 import { register } from 'swiper/element/bundle';
 import { BobaList } from './boba-list/boba-list';
 import { Cart } from './cart/cart';
+import { AddBoba } from './add-boba/add-boba';
 
 register();
 
@@ -14,7 +15,8 @@ register();
   declarations: [
     Home,
     BobaList,
-    Cart
+    Cart,
+    AddBoba
   ],
   imports: [
     CommonModule,
