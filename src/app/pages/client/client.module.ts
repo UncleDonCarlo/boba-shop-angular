@@ -6,13 +6,15 @@ import { ClientRoutingModule } from './client-routing.module';
 import { Home } from './home/home';
 import { register } from 'swiper/element/bundle';
 import { BobaList } from './boba-list/boba-list';
+import { Cart } from './cart/cart';
 
 register();
 
 @NgModule({
   declarations: [
     Home,
-    BobaList
+    BobaList,
+    Cart
   ],
   imports: [
     CommonModule,
