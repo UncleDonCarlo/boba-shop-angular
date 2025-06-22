@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnDestroy } from '@angular/core';
 import CartService from '../../../services/cart-service/cart.service';
 import { Product } from '../../../interfaces/cart';
 import { timeInterval } from 'rxjs';
@@ -41,6 +41,8 @@ export class BobaList {
 
   isLoading: boolean = false;
 
+  intervalId: any;
+
   constructor(private cartService: CartService) {}
 
   addItem(id: number) {
@@ -56,7 +58,7 @@ export class BobaList {
       this.isSuccess = true;
       this.isLoading = false;
 
-      setInterval(() => {
+      this.intervalId = setInterval(() => {
         this.isSuccess = false;
       }, 4000)
 
@@ -64,4 +66,11 @@ export class BobaList {
       console.error(err);
     }
   }
+
+  ngOnDestroy(): void {
+    if (this.intervalId) {
+      clearInterval(this.intervalId);
+    }
+  }
+
 }
