@@ -12,5 +12,9 @@ export class AddBoba {
 
   constructor() {}
 
-  
+  OnSubmit(bobaForm : any) {
+    this.bobaForm = bobaForm
+    console.log(this.bobaForm)
+  }
+
 }

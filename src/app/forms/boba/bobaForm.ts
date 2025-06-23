@@ -5,9 +5,22 @@ export function bobaForm(): FormGroup {
     name: new FormControl<string>('', [
       Validators.required,
     ]),
-    price: new FormControl<number>(0, [
+    price: new FormControl<number | null>(null, [
       Validators.required,
+      Validators.min(1)
     ]),
     addOn: new FormArray([])
+  });
+}
+
+export function bobaAddOnForm(): FormGroup {
+  return new FormGroup({
+    name: new FormControl<string>('', [
+      Validators.required,
+    ]),
+    price: new FormControl<number | null>(null, [
+      Validators.required,
+      Validators.min(1)
+    ]),
   });
 }
