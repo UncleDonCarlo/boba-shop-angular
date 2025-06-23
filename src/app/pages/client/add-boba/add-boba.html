@@ -39,7 +39,14 @@
           </section>
 
           <section class="h-full w-full snap-start">
-            <app-boba-form (bobaFormChange)="OnSubmit($event)" />
+            <app-base-button
+              (click)="getNameFromChild()"
+              btnTitle="บันทึก"
+            />
+            <app-boba-form
+              #childRef
+              (bobaFormChange)="OnSubmit($event)"
+            />
           </section>
         </article>
       </div>

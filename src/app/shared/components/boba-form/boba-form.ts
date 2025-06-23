@@ -29,4 +29,8 @@ export class BobaForm {
   removeAddOn(index: number) {
     this.addOnArray.removeAt(index);
   }
+
+  log(){
+    console.log("awdwadawdawd")
+  }
 }

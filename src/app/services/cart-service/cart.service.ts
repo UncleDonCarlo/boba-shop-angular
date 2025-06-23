@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Product } from '../../interfaces/cart';
+import { Cart } from '../../interfaces/cart';
 import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
@@ -7,62 +7,62 @@ import { BehaviorSubject } from 'rxjs';
 })
 
 export default class CartService {
-  products: BehaviorSubject<Product[]> = new BehaviorSubject<Product[]>([]);
+  private carts: BehaviorSubject<Cart[]> = new BehaviorSubject<Cart[]>([]);
 
   constructor() {
     this.loadFromStorage();
   }
 
-  addProduct(product: Product) : void {
-    const currentProducts = [...this.products.value];
-    const existingProductIndex = currentProducts.findIndex(p => p.id === product.id);
+  addProduct(cart: Cart) : void {
+    const currentCarts = [...this.carts.value];
+    const existingCartIndex = currentCarts.findIndex(p => p.id === cart.id);
 
-    if (existingProductIndex > -1) {
-      currentProducts[existingProductIndex].quantity += 1;
+    if (existingCartIndex > -1) {
+      currentCarts[existingCartIndex].quantity += 1;
     } else {
-      currentProducts.push(product);
+      currentCarts.push(cart);
     }
 
-    this.products.next(currentProducts);
-    localStorage.setItem("products", JSON.stringify(currentProducts));
+    this.carts.next(currentCarts);
+    localStorage.setItem("carts", JSON.stringify(currentCarts));
   }
 
   removeProduct(id: number) : void {
-    const currentProducts = [...this.products.value];
-    const existingProductIndex = currentProducts.findIndex(p => p.id === id);
+    const currentCarts = [...this.carts.value];
+    const existingCartIndex = currentCarts.findIndex(p => p.id === id);
 
-    if(currentProducts[existingProductIndex].quantity <= 1){
-      currentProducts.splice(existingProductIndex, 1);
+    if(currentCarts[existingCartIndex].quantity <= 1){
+      currentCarts.splice(existingCartIndex, 1);
     } else {
-      currentProducts[existingProductIndex].quantity -= 1;
+      currentCarts[existingCartIndex].quantity -= 1;
     }
 
-    this.products.next(currentProducts);
-    localStorage.setItem("products", JSON.stringify(currentProducts));
+    this.carts.next(currentCarts);
+    localStorage.setItem("carts", JSON.stringify(currentCarts));
   }
 
   getTotalCartAmount(): number{
     let count = 0;
 
-    this.products.value.forEach(p => {
-      count += p.quantity;
+    this.carts.value.forEach(c => {
+      count += c.quantity;
     });
 
     return count;
   }
 
-  get getProduct(){
-    return this.products || [];
+  get getCart(){
+    return this.carts.asObservable();
   }
 
-  set setProduct(products: BehaviorSubject<Product[]>){
-    this.products = products
+  set setCart(carts: BehaviorSubject<Cart[]>){
+    this.carts = carts
   }
 
   private loadFromStorage() {
-    const products = localStorage.getItem("products");
-    const parsedProducts = products ? JSON.parse(products) : [];
-    this.setProduct = new BehaviorSubject<Product[]>(parsedProducts);
+    const carts = localStorage.getItem("carts");
+    const parsedCarts = carts ? JSON.parse(carts) : [];
+    this.setCart = new BehaviorSubject<Cart[]>(parsedCarts);
   }
 }
 

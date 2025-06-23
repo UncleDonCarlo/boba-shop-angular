@@ -1,7 +1,6 @@
 import { Component, OnDestroy } from '@angular/core';
 import CartService from '../../../services/cart-service/cart.service';
-import { Product } from '../../../interfaces/cart';
-import { timeInterval } from 'rxjs';
+import { Cart } from '../../../interfaces/cart';
 import { Router } from '@angular/router';
 
 @Component({
@@ -11,7 +10,7 @@ import { Router } from '@angular/router';
   styleUrl: './boba-list.scss'
 })
 export class BobaList {
-  bobaList: Product[] = [
+  bobaList: Cart[] = [
     {
       id: 1,
       name: "Thai Tea",

@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { bobaForm } from '../../../forms/boba/bobaForm';
+import { Component, ElementRef, ViewChild } from '@angular/core';
+import { BobaForm } from '../../../shared/components/boba-form/boba-form';
 
 @Component({
   selector: 'app-add-boba',
@@ -8,13 +8,16 @@ import { bobaForm } from '../../../forms/boba/bobaForm';
   styleUrl: './add-boba.scss'
 })
 export class AddBoba {
-  bobaForm = bobaForm();
+  @ViewChild('childRef') child!: BobaForm;
 
   constructor() {}
 
   OnSubmit(bobaForm : any) {
-    this.bobaForm = bobaForm
-    console.log(this.bobaForm)
+    localStorage.setItem('products', JSON.stringify(bobaForm))
+  }
+
+  getNameFromChild(){
+    console.log("this.child.bobaForm.get('name')?.value", this.child.bobaForm.get('name')?.value)
   }
 
 }
