@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { Cart } from './cart';
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
 describe('Cart', () => {
   let component: Cart;
@@ -8,7 +9,8 @@ describe('Cart', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [Cart]
+      declarations: [Cart],
+      schemas:[CUSTOM_ELEMENTS_SCHEMA]
     })
     .compileComponents();
 
